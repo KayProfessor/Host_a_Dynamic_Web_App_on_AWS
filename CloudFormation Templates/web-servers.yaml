@@ -1,0 +1,26 @@
+# AWSTemplateFormatVersion: '2010-09-09'
+# Resources:
+#   EC2Instance1:
+#     Type: AWS::EC2::Instance
+#     Properties:
+#       InstanceType: t2.micro
+#       ImageId: ami-07caf09b362be10b8 # Enter your desired AMI ID here
+#       SubnetId: subnet-049704f10b2f9b208 # Existing subnet ID
+#       SecurityGroupIds:
+#         - sg-0021e559b0e515f87 # Existing security group ID
+#       Tags:
+#         - Key: Name
+#           Value: "DEV-webserver-AZ1"
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  EC2Instance2:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-07caf09b362be10b8 # Enter your desired AMI ID here
+      SubnetId: subnet-0a54bb04c81f355c3 # Existing subnet ID
+      SecurityGroupIds:
+        - sg-0021e559b0e515f87 # Existing security group ID
+      Tags:
+        - Key: Name
+          Value: "DEV-webserver-AZ2"

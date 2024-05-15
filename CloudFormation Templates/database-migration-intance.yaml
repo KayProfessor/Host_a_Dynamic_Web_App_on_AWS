@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-07caf09b362be10b8 # Enter your desired AMI ID here
+      SubnetId: subnet-049704f10b2f9b208 # Existing subnet ID
+      SecurityGroupIds:
+        - sg-00aec7b5341a82e7b # Existing security group ID

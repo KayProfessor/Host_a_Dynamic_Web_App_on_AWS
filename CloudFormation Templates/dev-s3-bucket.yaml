@@ -1,0 +1,8 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  DevSQLFilesBucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: "devproj-sql-files"
+      AccessControl: "Private" # You can adjust access control as per your requirements
+    DeletionPolicy: "Retain" # Change to "Delete" if you want the bucket to be deleted when the stack is deleted

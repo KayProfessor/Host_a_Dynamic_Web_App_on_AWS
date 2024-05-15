@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation template to create an EC2 Instance Connect endpoint
+
+Parameters:
+  PrivateSubnetIdAZ2:
+    Type: AWS::EC2::Subnet::Id
+    Description: ID of the private subnet in AZ2
+  EICEServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup::Id
+    Description: ID of the security group for the application servers
+
+Resources:
+  EC2InstanceConnectEndpoint:
+    Type: AWS::EC2::InstanceConnectEndpoint
+    Properties:
+      VpcId: vpc-0b5c19d8ac23207ed
+      NetworkOrigin: !Sub "PrivateSubnet,${PrivateSubnetIdAZ2}"
+      SecurityGroup: !Ref EICEServerSecurityGroup
+
+Outputs:
+  EC2InstanceConnectEndpoint:
+    Description: Endpoint for EC2 Instance Connect
+    Value: !GetAtt EC2InstanceConnectEndpoint.EndpointFqdn
